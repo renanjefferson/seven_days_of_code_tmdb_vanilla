@@ -1,0 +1,175 @@
+@import '../styles/global.css';
+
+/* Header */
+header {
+  padding: 62px 0 48px 0;
+  text-align: center;
+}
+
+/* Search */
+#search {
+  margin-bottom: 64px;
+}
+#search .container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#search .container .input-container {
+  background-color: #454558;
+  border-radius: 8px;
+  display: flex;
+  margin-bottom: 30px;
+  padding: 4px;
+  width: 580px;
+}
+
+@media screen and (max-width: 767px){
+  #search .container .input-container {
+    width: 100%;
+  }
+}
+
+#search .container .input-container label {
+  flex: 1;
+}
+
+#search .container .input-container input[type="text"] {
+  background-color: transparent;
+  border: 0;
+  color: var(--color-gray-100);
+  font-size: 1rem;
+  height: 70px;
+  padding: 0 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+#search .container .input-container input[type="text"]::placeholder {
+  color: var(--color-gray-800);
+}
+
+#search .container .input-checkbox-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#search .container .input-checkbox-container input[type="checkbox"] {
+  appearance: none;
+  border: 2px solid var(--color-tertiary);
+  border-radius: 4px;
+  cursor: pointer;
+  height: 1rem;
+  margin-right: 12px;
+  outline: 0;
+  position: relative;
+  width: 1rem;
+}
+
+#search .container .input-checkbox-container input[type="checkbox"]::before {
+  border-color: var(--color-gray-100);
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  content: '';
+  display: block;
+  height: 10px;
+  left: 5px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(45deg);
+  width: 4px;
+}
+
+#search .container .input-checkbox-container input[type="checkbox"]:checked {
+  background: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+  color: var(--color-gray-100);
+}
+
+#search .container .input-checkbox-container input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+#search .container .input-checkbox-container label {
+  color: var(--color-gray-100);
+  cursor: pointer;
+}
+
+/* List Movies */
+.movie-information-container {
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  box-shadow: 32.8387px 24.5482px 79px rgba(0, 0, 0, 0.15), 23.8851px 17.855px 53.2479px rgba(0, 0, 0, 0.121406), 16.6246px 12.4276px 34.4391px rgba(0, 0, 0, 0.10125), 10.9035px 8.15079px 21.3701px rgba(0, 0, 0, 0.0867188), 6.56775px 4.90965px 12.8375px rgba(0, 0, 0, 0.075), 3.46346px 2.58907px 7.6377px rgba(0, 0, 0, 0.0632813), 1.4367px 1.07399px 4.56719px rgba(0, 0, 0, 0.04875), 0.333519px 0.249318px 2.42246px rgba(0, 0, 0, 0.0285938);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: [information] 45% [description] 55%;
+  min-height: 265px;
+  padding: 30px;
+}
+
+@media screen and (max-width: 767px){
+  .movie-information-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.movie-information-container .movie-details {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: [image] 45% [details] 55%;
+}
+
+@media screen and (max-width: 767px){
+  .movie-information-container .movie-details {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+}
+
+.movie-information-container .movie-details .movie-image img {
+  border-radius: 50%;
+}
+
+.movie-information-container .movie-details .movie-information h2 {
+  color: var(--color-gray-100);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 22px;
+}
+
+.movie-information-container .movie-details .movie-information .movie-score-fovorite-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.33rem;
+}
+
+@media screen and (max-width: 767px){
+  .movie-information-container .movie-details .movie-information .movie-score-fovorite-container {
+    justify-content: center;
+  }
+}
+
+.movie-information-container .movie-details .movie-information .movie-score-fovorite-container .score,
+.movie-information-container .movie-details .movie-information .movie-score-fovorite-container .favorite {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.movie-information-container .movie-details .movie-information .movie-score-fovorite-container .score span,
+.movie-information-container .movie-details .movie-information .movie-score-fovorite-container .favorite span {
+  color: var(--color-gray-100);
+  font-weight: var(--font-weight-normal);
+  line-height: 22px;
+}
+
+.movie-information-container .movie-description p{
+  font-weight: var(--font-weight-medium);
+  line-height: 32px;
+}
