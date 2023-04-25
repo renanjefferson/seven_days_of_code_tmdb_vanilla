@@ -2,13 +2,13 @@ const api_base_url = 'https://api.themoviedb.org/3';
 const api_base_url_image = 'https://image.tmdb.org/t/p';
 const api_key = '4739517f5c4a7ee3075aa7e1c84adeff';
 const moviesContainer = document.getElementById('movies');
-
 const inputFavoriteMovies = document.getElementById('my-fovorite-movies');
 const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('search-button');
+
 buttonSearch.addEventListener('click', searchMovie);
-inputFavoriteMovies.addEventListener("change", myFavoriteMoviesStatus);
 inputSearch.addEventListener('keypress', (event) => handleSearchByEnter(event));
+inputFavoriteMovies.addEventListener("change", myFavoriteMoviesStatus);
 
 function handleSearchByEnter(event) {
   if(event.keyCode === 13) {
@@ -16,7 +16,6 @@ function handleSearchByEnter(event) {
     searchMovie();
   }
 }
-
 
 function myFavoriteMoviesStatus() {
   const isChecked = inputFavoriteMovies.checked;
