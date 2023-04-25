@@ -8,6 +8,14 @@ const inputSearch = document.getElementById('input-search');
 const buttonSearch = document.getElementById('search-button');
 buttonSearch.addEventListener('click', searchMovie);
 inputFavoriteMovies.addEventListener("change", myFavoriteMoviesStatus);
+inputSearch.addEventListener('keypress', (event) => handleSearchByEnter(event));
+
+function handleSearchByEnter(event) {
+  if(event.keyCode === 13) {
+    clearAllMovies();
+    searchMovie();
+  }
+}
 
 
 function myFavoriteMoviesStatus() {
